@@ -1,44 +1,52 @@
-let model;
-const imageInput = document.getElementById('imageUpload');
-const preview = document.getElementById('preview');
+const imageUpload = document.getElementById("imageUpload");
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
 
-imageInput.addEventListener('change', () => {
-    const file = imageInput.files[0];
+let img = new Image();
+
+imageUpload.addEventListener("change", () => {
+    const file = imageUpload.files[0];
     const reader = new FileReader();
 
     reader.onload = () => {
-        preview.src = reader.result;
+        img.src = reader.result;
     };
     reader.readAsDataURL(file);
 });
 
-async function loadModel() {
-    model = await tf.loadLayersModel('model/model.json');
-    console.log("Model loaded");
-}
-loadModel();
+img.onload = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+};
 
-async function predict() {
-    if (!preview.src) {
-        alert("Upload an image first");
-        return;
+function analyzeImage() {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    const data = imageData.data;
+
+    let redSum = 0;
+    let pixelCount = 0;
+
+    for (let i = 0; i < data.length; i += 4) {
+        let r = data[i];
+        let g = data[i + 1];
+        let b = data[i + 2];
+
+        // Ignore very dark pixels
+        if (r + g + b > 100) {
+            redSum += r;
+            pixelCount++;
+        }
     }
 
-    const tensor = tf.browser
-        .fromPixels(preview)
-        .resizeNearestNeighbor([224, 224])
-        .toFloat()
-        .div(255.0)
-        .expandDims();
+    let avgRed = redSum / pixelCount;
 
-    const prediction = model.predict(tensor);
-    const value = prediction.dataSync()[0];
-
-    if (value > 0.5) {
-        document.getElementById("result").innerText =
-            "Result: Anemia Likely";
+    let resultText;
+    if (avgRed < 120) {
+        resultText = "Anemia Likely (Low Red Intensity)";
     } else {
-        document.getElementById("result").innerText =
-            "Result: Normal Hemoglobin Level";
+        resultText = "Normal (Adequate Red Intensity)";
     }
+
+    document.getElementById("result").innerText =
+        `Average Red Value: ${avgRed.toFixed(2)} → ${resultText}`;
 }
