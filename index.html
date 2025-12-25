@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <title>Non-Invasive Anemia Detection</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 </head>
 <body>
 
 <h1>Non-Invasive Anemia Detection</h1>
-<p>Upload conjunctival (eye) image</p>
+<p>Upload eye (conjunctiva) image</p>
 
 <input type="file" id="imageUpload" accept="image/*">
 <br><br>
 
-<img id="preview" width="300">
+<canvas id="canvas" width="300" height="300"></canvas>
 <br><br>
 
-<button onclick="predict()">Analyze</button>
+<button onclick="analyzeImage()">Analyze</button>
 
 <h2 id="result"></h2>
 
 <script src="script.js"></script>
 </body>
 </html>
+
