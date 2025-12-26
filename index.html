@@ -3,22 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Non-Invasive Anemia Detection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Non-Invasive Anemia Detection</h1>
-<p>Upload eye (conjunctiva) image</p>
+<header>
+    <h1>Non-Invasive Anemia Detection</h1>
+    <p>Eye (Conjunctiva) Image Analysis</p>
+</header>
 
-<input type="file" id="imageUpload" accept="image/*">
-<br><br>
+<main>
+    <div class="card">
 
-<canvas id="canvas" width="300" height="300"></canvas>
-<br><br>
+        <div class="upload-section">
+            <label class="upload-btn">
+                Upload Eye Image
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+            </label>
+            <p class="hint">Use clear conjunctival images for best results</p>
+        </div>
 
-<button onclick="analyzeImage()">Analyze</button>
+        <div class="canvas-container">
+            <canvas id="canvas" width="300" height="300"></canvas>
+        </div>
 
-<h2 id="result"></h2>
+        <button class="analyze-btn" onclick="analyzeImage()">Analyze Image</button>
+
+        <div id="result" class="result-box">
+            Awaiting analysis…
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <p>For academic and research purposes only • Not for clinical diagnosis</p>
+</footer>
 
 <script src="script.js"></script>
 </body>
