@@ -16,20 +16,31 @@
 <main>
     <div class="card">
 
+        <!-- Highlighted instruction text -->
+        <p class="upload-text">
+            Upload eye (conjunctiva) image
+        </p>
+
+        <!-- Upload button -->
         <div class="upload-section">
             <label class="upload-btn">
-                Upload Eye Image
-                <input type="label" id="imageUpload" accept="image/*" hidden>
+                Upload Image
+                <input type="file" id="imageUpload" accept="image/*" hidden>
             </label>
-            <p class="hint">Use clear conjunctival images for best results</p>
+            <p class="hint">Clear lower eyelid images give best results</p>
         </div>
 
+        <!-- Canvas -->
         <div class="canvas-container">
             <canvas id="canvas" width="300" height="300"></canvas>
         </div>
 
-        <button class="analyze-btn" onclick="analyzeImage()">Analyze Image</button>
+        <!-- Analyze button -->
+        <button class="analyze-btn" onclick="analyzeImage()">
+            Analyze Image
+        </button>
 
+        <!-- Result -->
         <div id="result" class="result-box">
             Awaiting analysis…
         </div>
@@ -38,8 +49,15 @@
 </main>
 
 <footer>
-    <p>For academic and research purposes only • Not for clinical diagnosis</p>
+    <p>
+        For academic and research purposes only • Not for clinical diagnosis
+    </p>
 </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
 
 <script src="script.js"></script>
 </body>
