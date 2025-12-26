@@ -42,7 +42,7 @@ function analyzeImage() {
         let b = data[i + 2];
 
         // Exclude highlights & shadows
-        if (r > 30 && g > 30 && b > 30 && r < 240 && g < 240) {
+        if (r > 50 && g > 50 && b > 30 && r < 200 && g < 200) {
             redSum += r;
             greenSum += g;
             pixelCount++;
@@ -60,7 +60,7 @@ function analyzeImage() {
     let redGreenRatio = avgRed / avgGreen;
 
     let diagnosis;
-    if (redGreenRatio < 1.7) {
+    if (redGreenRatio < 1.5) {
         diagnosis = "Anemia Likely (Pale Conjunctiva)";
     } else {
         diagnosis = "Normal (Adequate Conjunctival Redness)";
