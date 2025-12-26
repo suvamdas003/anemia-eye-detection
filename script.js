@@ -42,7 +42,7 @@ function analyzeImage() {
         let b = data[i + 2];
 
         // Exclude highlights & shadows
-        if (r > 50 && g > 50 && b > 30 && r < 200 && g < 200) {
+        if (r > 50 && g > 50 && b > 50 && r < 200 && g < 200) {
             redSum += r;
             greenSum += g;
             pixelCount++;
