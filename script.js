@@ -60,7 +60,7 @@ function analyzeImage() {
     let redGreenRatio = avgRed / avgGreen;
 
     let diagnosis;
-    if (redGreenRatio < 1.15) {
+    if (redGreenRatio < 1.1) {
         diagnosis = "Anemia Likely (Pale Conjunctiva)";
     } else {
         diagnosis = "Normal (Adequate Conjunctival Redness)";
