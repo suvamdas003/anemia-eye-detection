@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-/* ---------- Body ---------- */
+/* ---------- Body with Background Image ---------- */
 body {
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
     color: #2c3e50;
@@ -13,13 +13,20 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* Background image */
-    background-image: url("background.jpg.jpeg");
+    background-image: url("images/background.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
+/* Overlay for readability */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: -1;
+}
 
 /* ---------- Header ---------- */
 header {
@@ -31,7 +38,6 @@ header {
 
 header h1 {
     font-size: 28px;
-    margin-bottom: 6px;
 }
 
 header p {
@@ -39,16 +45,26 @@ header p {
     opacity: 0.9;
 }
 
-/* ---------- Main ---------- */
-main {
+/* ---------- Main Layout ---------- */
+.layout {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 30px 15px;
+    padding: 40px;
+    gap: 40px;
 }
 
-/* ---------- Card ---------- */
+/* ---------- Left Text ---------- */
+.left-text {
+    flex: 1;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.4;
+}
+
+/* ---------- Card (Right Side) ---------- */
 .card {
     background: white;
     width: 100%;
@@ -59,7 +75,7 @@ main {
     text-align: center;
 }
 
-/* ---------- Highlighted Upload Text ---------- */
+/* ---------- Upload Highlight Text ---------- */
 .upload-text {
     color: #1f3c88;
     font-weight: bold;
@@ -115,7 +131,6 @@ canvas {
     font-size: 15px;
     cursor: pointer;
     margin-top: 10px;
-    transition: background 0.3s;
 }
 
 .analyze-btn:hover {
@@ -130,7 +145,6 @@ canvas {
     background: #f1f3f6;
     font-size: 14px;
     font-weight: 600;
-    color: #2c3e50;
 }
 
 /* ---------- Footer ---------- */
@@ -142,5 +156,16 @@ footer {
     background: #f4f6f9;
 }
 
+/* ---------- Mobile Responsive ---------- */
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .left-text {
+        margin-bottom: 20px;
+    }
+}
 
 
