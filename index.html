@@ -13,15 +13,20 @@
     <p>Eye (Conjunctiva) Image Analysis</p>
 </header>
 
-<main>
+<main class="layout">
+
+    <!-- LEFT SIDE TEXT -->
+    <div class="left-text">
+        Diagnose Anemia before it’s too late
+    </div>
+
+    <!-- RIGHT SIDE CARD -->
     <div class="card">
 
-        <!-- Highlighted instruction text -->
         <p class="upload-text">
             Upload eye (conjunctiva) image
         </p>
 
-        <!-- Upload button -->
         <div class="upload-section">
             <label class="upload-btn">
                 Upload Image
@@ -30,22 +35,20 @@
             <p class="hint">Clear lower eyelid images give best results</p>
         </div>
 
-        <!-- Canvas -->
         <div class="canvas-container">
             <canvas id="canvas" width="300" height="300"></canvas>
         </div>
 
-        <!-- Analyze button -->
         <button class="analyze-btn" onclick="analyzeImage()">
             Analyze Image
         </button>
 
-        <!-- Result -->
         <div id="result" class="result-box">
             Awaiting analysis…
         </div>
 
     </div>
+
 </main>
 
 <footer>
@@ -57,9 +60,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
-<script src="script.js"></script>
-</body>
-</html>
-
