@@ -8,12 +8,18 @@
 /* ---------- Body ---------- */
 body {
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    background: linear-gradient(to right, #eef2f7, #f9fbfd);
     color: #2c3e50;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
+    /* Background image */
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 /* ---------- Header ---------- */
 header {
