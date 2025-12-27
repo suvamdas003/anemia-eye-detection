@@ -5,26 +5,14 @@
     box-sizing: border-box;
 }
 
-/* ---------- Body with Background Image ---------- */
+/* ---------- Body ---------- */
 body {
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(to right, #eef2f7, #f9fbfd);
+    color: #2c3e50;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
-    background-image: url("images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Overlay */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.85);
-    z-index: -1;
 }
 
 /* ---------- Header ---------- */
@@ -37,6 +25,7 @@ header {
 
 header h1 {
     font-size: 28px;
+    margin-bottom: 6px;
 }
 
 header p {
@@ -44,17 +33,16 @@ header p {
     opacity: 0.9;
 }
 
-/* ---------- Main Layout ---------- */
-.layout {
+/* ---------- Main ---------- */
+main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    padding: 40px;
+    padding: 30px 15px;
 }
 
-/* ---------- Card (Both Sides) ---------- */
+/* ---------- Card ---------- */
 .card {
     background: white;
     width: 100%;
@@ -65,22 +53,7 @@ header p {
     text-align: center;
 }
 
-/* ---------- Left Awareness Card ---------- */
-.left-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 220px;
-}
-
-.awareness-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    line-height: 1.4;
-}
-
-/* ---------- Upload Highlight Text ---------- */
+/* ---------- Highlighted Upload Text ---------- */
 .upload-text {
     color: #1f3c88;
     font-weight: bold;
@@ -135,6 +108,8 @@ canvas {
     border-radius: 6px;
     font-size: 15px;
     cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
 }
 
 .analyze-btn:hover {
@@ -149,6 +124,7 @@ canvas {
     background: #f1f3f6;
     font-size: 14px;
     font-weight: 600;
+    color: #2c3e50;
 }
 
 /* ---------- Footer ---------- */
@@ -158,13 +134,6 @@ footer {
     font-size: 12px;
     color: #7f8c8d;
     background: #f4f6f9;
-}
-
-/* ---------- Mobile Responsive ---------- */
-@media (max-width: 768px) {
-    .layout {
-        flex-direction: column;
-    }
 }
 
 
