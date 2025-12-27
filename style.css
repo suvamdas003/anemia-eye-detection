@@ -59,14 +59,21 @@ main {
 
 /* ---------- Card ---------- */
 .card {
-    background: white;
+    background: rgba(255, 255, 255, 0.75); /* semi-transparent white */
     width: 100%;
     max-width: 420px;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+
+    /* Glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
 
 /* ---------- Highlighted Upload Text ---------- */
 .upload-text {
