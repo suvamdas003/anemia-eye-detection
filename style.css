@@ -8,7 +8,6 @@
 /* ---------- Body with Background Image ---------- */
 body {
     font-family: "Segoe UI", Roboto, Arial, sans-serif;
-    color: #2c3e50;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -19,7 +18,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/* Overlay for readability */
+/* Overlay */
 body::before {
     content: "";
     position: fixed;
@@ -49,22 +48,13 @@ header p {
 .layout {
     flex: 1;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 40px;
     gap: 40px;
+    padding: 40px;
 }
 
-/* ---------- Left Text ---------- */
-.left-text {
-    flex: 1;
-    font-size: 20px;
-    font-weight: bold;
-    color: #000;
-    line-height: 1.4;
-}
-
-/* ---------- Card (Right Side) ---------- */
+/* ---------- Card (Both Sides) ---------- */
 .card {
     background: white;
     width: 100%;
@@ -73,6 +63,21 @@ header p {
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     text-align: center;
+}
+
+/* ---------- Left Awareness Card ---------- */
+.left-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+}
+
+.awareness-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    line-height: 1.4;
 }
 
 /* ---------- Upload Highlight Text ---------- */
@@ -130,7 +135,6 @@ canvas {
     border-radius: 6px;
     font-size: 15px;
     cursor: pointer;
-    margin-top: 10px;
 }
 
 .analyze-btn:hover {
@@ -160,12 +164,8 @@ footer {
 @media (max-width: 768px) {
     .layout {
         flex-direction: column;
-        text-align: center;
-    }
-
-    .left-text {
-        margin-bottom: 20px;
     }
 }
+
 
 
