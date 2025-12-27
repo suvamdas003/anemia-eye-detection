@@ -72,12 +72,12 @@ main {
 
 /* ---------- Card ---------- */
 .card {
-    background: white;
+    background: transparent;   /* nothing behind */
+    border: none;              /* no outline */
+    box-shadow: none;          /* no shadow */
+    padding: 25px;
     width: 100%;
     max-width: 420px;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     text-align: center;
 }
 
@@ -85,12 +85,12 @@ main {
 
 /* ---------- Highlighted Upload Text ---------- */
 .upload-text {
-    color: #1f3c88;
+    color: #000000;
     font-weight: bold;
     text-decoration: underline;
-    font-size: 15px;
-    margin-bottom: 15px;
+    font-size: 17px;
 }
+
 
 /* ---------- Upload Section ---------- */
 .upload-section {
@@ -113,10 +113,11 @@ main {
 }
 
 .hint {
-    margin-top: 8px;
-    font-size: 12px;
-    color: #7f8c8d;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
 }
+
 
 /* ---------- Canvas ---------- */
 .canvas-container {
@@ -148,13 +149,11 @@ canvas {
 
 /* ---------- Result Box ---------- */
 .result-box {
-    margin-top: 18px;
+    background: rgba(255, 255, 255, 0.2); /* optional, subtle */
     padding: 12px;
     border-radius: 6px;
-    background: #f1f3f6;
-    font-size: 14px;
-    font-weight: 600;
-    color: #2c3e50;
+    font-weight: bold;
+    color: #000000;
 }
 /* ---------- Footer ---------- */
 footer {
